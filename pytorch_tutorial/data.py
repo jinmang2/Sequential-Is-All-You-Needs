@@ -67,9 +67,12 @@ ENC_HID_DIM = 512
 DEC_HID_DIM = 512
 ENC_DROPOUT = 0.5
 DEC_DROPOUT = 0.5
+SRC_PAD_IDX = SRC.vocab.stoi[SRC.pad_token]
+TRG_PAD_IDX = TRG.vocab.stoi[TRG.pad_token]
 
 params = (INPUT_DIM, OUTPUT_DIM, ENC_EMB_DIM, DEC_EMB_DIM,
-        ENC_HID_DIM, DEC_HID_DIM, ENC_DROPOUT, DEC_DROPOUT)
+          ENC_HID_DIM, DEC_HID_DIM, ENC_DROPOUT, DEC_DROPOUT,
+          SRC_PAD_IDX, TRG_PAD_IDX)
 
 
 def prepare_data():
