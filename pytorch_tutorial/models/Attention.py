@@ -11,7 +11,7 @@ class Encoder(nn.Module):
     def __init__(self, input_dim, emb_dim, enc_hid_dim, dec_hid_dim, dropout):
         super().__init__()
         self.embedding = nn.Embedding(input_dim, emb_dim)
-        self.rnn = nn.GRU(emb_dim, enc_hid_dim, bidirectional = True)
+        self.rnn = nn.GRU(emb_dim, enc_hid_dim, bidirectional=True)
         self.fc = nn.Linear(enc_hid_dim * 2, dec_hid_dim)
         self.dropout = nn.Dropout(dropout)
 
@@ -48,13 +48,13 @@ class Decoder(nn.Module):
         encoder_outputs = encoder_outputs.permute(1, 0, 2)
         weighted = torch.bmm(a, encoder_outputs)
         weighted = weighted.permute(1, 0, 2)
-        rnn_input = torch.cat((embedded, weighted), dim = 2)
+        rnn_input = torch.cat((embedded, weighted), dim=2)
         output, hidden = self.rnn(rnn_input, hidden.unsqueeze(0))
         assert (output == hidden).all()
         embedded = embedded.squeeze(0)
         output = output.squeeze(0)
         weighted = weighted.squeeze(0)
-        prediction = self.fc_out(torch.cat((output, weighted, embedded), dim = 1))
+        prediction = self.fc_out(torch.cat((output, weighted, embedded), dim=1))
         return prediction, hidden.squeeze(0)
 
 

@@ -42,13 +42,12 @@ def main(modelname=None):
         model = Attention(enc, dec, device).to(device)
     elif modelname == 'Transformer':
         enc = Transformer_ENC(INPUT_DIM,
-                              HID_DIM, 
+                              HID_DIM,
                               ENC_LAYERS,
                               ENC_HEADS,
                               ENC_PF_DIM,
                               ENC_DROPOUT,
                               device)
-
         dec = Transformer_DEC(OUTPUT_DIM,
                               HID_DIM,
                               DEC_LAYERS,

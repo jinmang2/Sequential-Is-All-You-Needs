@@ -3,6 +3,7 @@ import torch.nn as nn
 
 
 class MultiHeadAttentionLayer(nn.Module):
+
     def __init__(self, hid_dim, n_heads, dropout, device):
         super().__init__()
         assert hid_dim % n_heads == 0
