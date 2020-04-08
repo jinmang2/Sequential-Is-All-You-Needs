@@ -1,0 +1,3 @@
+nlp_dl_camp_khkim/data/nsmc/raw/*.json
+*.h5
+*.pyc
