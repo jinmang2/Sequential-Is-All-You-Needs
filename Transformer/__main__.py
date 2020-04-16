@@ -5,6 +5,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding='utf-8')
 sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding='utf-8')
 
 from prepare_sentence_pair import get_seq_pair_kr_en as get_generator
+from transformer import Transformer
 
 BATCH_SIZE = 64
 
@@ -13,3 +14,4 @@ if __name__ == '__main__':
     _, _, src_input = next(src_generator)
     _, _, trg_input = next(trg_generator)
     print(src_input, trg_input)
+    print(Transformer)
