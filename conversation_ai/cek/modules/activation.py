@@ -1,0 +1,23 @@
+possible_activations = [
+        'sigmoid', 
+        'tanh', 
+        'relu', 
+        'rrelu', 
+        'elu',
+        'hardtanh',
+        'celu',
+        'selu',
+        'glu',
+        'gelu',
+        'hardshrink',
+        'leaky_relu'
+        'logsigmoid',
+        'softplus',
+        'softshrink',
+        'prelu',
+        'softsign',
+        'tanhshrink',
+        'softmin',
+        'softmax',
+        'log_softmax',
+    ]
